@@ -110,7 +110,10 @@ def filtros_sidebar(df):
     
     # Cria o widget de seleção de intervalo de datas (calendário)
     # O valor padrão 'value' é uma tupla com o intervalo completo (min_date, max_date)
-    date_range = st.sidebar.date_input("Período de Análise", (min_date, max_date), min_value = min_date, max_value = max_date)
+    date_range = st.sidebar.date_input(
+        "Período de Análise", (min_date, max_date),
+        min_value = min_date, max_value = max_date,
+        format="DD/MM/YYYY")
 
     # Filtros de Seleção Múltipla (Multiselect)
     # Filtro de Região
