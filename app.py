@@ -75,28 +75,27 @@ def filtros_sidebar(df):
     # Ícone e nome do dashboard na barra lateral
     st.sidebar.markdown(
     """
-    <div style="text-align: left; display: flex; flex-direction: column; gap: 3px;">
-        <h1 style="
-            background: linear-gradient(135deg, #0B3366 0%, #1D5CA8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
-            margin: 0;
-            font-size: 1.95rem;
-            line-height: 1.45;
-            font-weight: 600;
-            letter-spacing: -0.02em;
-            text-transform: uppercase;
-            font-family: sans-serif;
-            white-space: nowrap;
-        ">
-            <span style="-webkit-text-fill-color: initial; text-fill-color: initial; background: none; margin-right: 8px;">📊</span>DASHBOARD<br>SALES ANALYTICS
-        </h1>
+    <div style="
+        text-align: left;
+        color: var(--text-color);
+        font-family: sans-serif;
+        font-size: 1.45rem;
+        line-height: 1.25;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        margin: 0;
+    ">
+        <div style="white-space: nowrap;">
+            <span style="color: #1D5CA8;">📊</span> DASHBOARD
+        </div>
+        <div style="white-space: nowrap;">
+            SALES ANALYTICS
+        </div>
     </div>
     """,
     unsafe_allow_html=True
-    )
+)
 
     # Adiciona uma linha horizontal para separar o logo do filtro
     st.sidebar.markdown("---")
@@ -119,18 +118,43 @@ def filtros_sidebar(df):
     # 2. 'sorted()' os coloca em ordem alfabética para o menu
     all_regioes = sorted(df["regiao"].unique())
     
-    # Cria o widget. 'default=all_regioes' faz com que todas as opções comecem selecionadas por padrão.
-    selected_regioes = st.sidebar.multiselect("Regiões", all_regioes, default = all_regioes)
+    st.sidebar.markdown("**Regiões**")
+
+    with st.sidebar.popover("Selecionar", use_container_width=True):
+       selected_regioes = st.multiselect(
+        "Selecione as regiões",
+        options=all_regioes,
+        default=all_regioes,
+        key="filtro-regioes",
+        label_visibility="collapsed"
+    )
 
     # Filtro de Categoria
     all_categorias = sorted(df["categoria"].unique())
-    selected_categorias = st.sidebar.multiselect("Categorias", all_categorias, default = all_categorias)
+
+    st.sidebar.markdown("**Categorias**")
+
+    with st.sidebar.popover("Selecionar", use_container_width=True):
+      selected_categorias = st.multiselect(
+        "Selecione as categorias",
+        options=all_categorias,
+        default=all_categorias,
+        key="filtro-categorias",
+        label_visibility="collapsed"
+    )
     
     # Filtro de Produto
     all_produtos = sorted(df["produto"].unique())
-    with st.sidebar.container(key="container-filtro-produtos"):
-        selected_produtos = st.multiselect("Produtos", all_produtos,
-        default=all_produtos
+
+    st.sidebar.markdown("**Produtos**")
+
+    with st.sidebar.popover("Selecionar", use_container_width=True):
+      selected_produtos = st.multiselect(
+        "Selecione os produtos",
+        options=all_produtos,
+        default=all_produtos,
+        key="filtro-produtos",
+        label_visibility="collapsed"
     )
 
     # Lógica de Aplicação dos Filtros
@@ -414,6 +438,16 @@ def set_custom_theme():
     css = f"""
     <style>
 
+        /* --- Largura da Sidebar --- */
+        [data-testid="stSidebar"] {{
+            min-width: 280px !important;
+            max-width: 280px !important;
+        }}
+
+        [data-testid="stSidebar"] > div:first-child {{
+            width: 280px !important;
+        }}
+
         /* --- Aumentar Altura Mínima dos Filtros Multiselect --- */
         /* [data-testid="stMultiSelect"]... : É um seletor CSS complexo que "mira" 
            exatamente na caixa interna do widget multiselect da sidebar. */
@@ -422,16 +456,7 @@ def set_custom_theme():
             overflow-y: auto !important;   /* Adiciona scroll vertical se os itens estourarem */
         }}
 
-        /* --- Aumentar especificamente o filtro de Produtos --- */
-            .st-key-container-filtro-produtos
-            [data-testid="stMultiSelect"]
-            div[data-baseweb="select"] > div:first-child {{
-            min-height: 250px !important;
-            height: 250px !important;
-            overflow-y: auto !important;
-            align-items: flex-start !important;
-        }}
-    
+   
         /* --- Estilização dos Cards de KPI --- */
         /* Define a aparência da classe 'metric-card' */
         .metric-card {{
@@ -442,29 +467,36 @@ def set_custom_theme():
             box-shadow: 2px 2px 5px rgba(0,0,0,0.3); /* Sombra sutil */
             text-align: center;
             margin-bottom: 10px; /* Espaçamento inferior */
+            min-height: 130px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }}
 
         /* Estilo do subtítulo do card (ex: "Receita Total") */
         .metric-card h3 {{
             margin: 0;
-            font-size: 1.2rem;
+            font-size: clamp(0.85rem, 1.2vw, 1.1rem);
             color: #394039;
             font-weight: normal;
+            white-space: nowrap;
         }}
 
         /* Estilo do valor principal do card (ex: "R$ 1.500.000") */
         .metric-card h2 {{
             margin: 10px 0 0 0;
-            font-size: 2rem;
+            font-size: clamp(1rem, 1.7vw, 1.6rem);
             color: {text_color};
             font-weight: bold;
+            white-space: nowrap;
         }}
 
         /* Estilo do texto 'delta' (ex: "+5.0% vs meta") */
         .metric-card .delta {{
-            font-size: 0.99rem;
+            font-size: clamp(0.7rem, 0.9vw, 0.9rem);
             color: #4CAF50;
             margin-top: 5px;
+            white-space: nowrap;
         }}
                 
         /* --- Estilização dos Itens de Filtro Selecionados (Bege-Ouro) --- */
@@ -816,7 +848,6 @@ def func_principal():
         - **Relatórios:** Geração de PDF com FPDF (compatível com Latin-1).
         - **Performance:** Cache de dados (`@st.cache_data`).
         """)
-
 
 # === Módulo 8: Ponto de Entrada da Execução
 
