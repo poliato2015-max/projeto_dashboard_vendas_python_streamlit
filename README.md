@@ -1,4 +1,4 @@
-# Dashboard de Vendas — Python e Streamlit
+# 📊 Dashboard de Vendas — Python e Streamlit
 
 > Aplicação interativa para análise de vendas, comparação entre realizado e meta, visualização de indicadores comerciais e exportação de dados em CSV e PDF.
 
@@ -10,7 +10,7 @@
 
 ---
 
-## Acesso ao aplicativo
+# 🌐 Acesso ao aplicativo
 
 A aplicação está publicada no Streamlit Community Cloud e pode ser acessada pelo link abaixo:
 
@@ -18,7 +18,7 @@ A aplicação está publicada no Streamlit Community Cloud e pode ser acessada p
 
 ---
 
-## Sobre o projeto
+# 📋 Sobre o projeto
 
 O **Dashboard de Vendas** é uma aplicação desenvolvida em Python e Streamlit para transformar registros comerciais armazenados em um banco SQLite em uma interface analítica interativa.
 
@@ -30,7 +30,7 @@ Este projeto foi desenvolvido como um estudo prático de Python, análise de dad
 
 ---
 
-## Objetivo
+## 🎯 Objetivo
 
 O objetivo é demonstrar como construir uma aplicação analítica funcional utilizando tecnologias acessíveis e de código aberto.
 
@@ -47,7 +47,7 @@ O projeto também demonstra a evolução de uma aplicação inicialmente desenvo
 
 ---
 
-## O problema
+# 💡 O problema
 
 Dados de vendas armazenados em um banco SQLite podem conter informações relevantes para a análise comercial, mas a ausência de uma interface visual dificulta a interpretação e o acompanhamento dos resultados.
 
@@ -73,7 +73,7 @@ O objetivo não é substituir sistemas ERP, CRM ou ferramentas corporativas em c
 
 ---
 
-## A solução
+# 🛠️ A solução
 
 A aplicação reúne os dados de vendas e as metas em um fluxo analítico único:
 
@@ -96,9 +96,9 @@ Quando o intervalo selecionado corresponde a apenas parte de um mês, a meta é 
 
 ---
 
-## Principais funcionalidades
+# ✨ Principais funcionalidades
 
-### Filtros interativos
+### 🔍 Filtros interativos
 
 A barra lateral permite filtrar os dados por:
 
@@ -111,7 +111,7 @@ Os filtros podem ser combinados para realizar análises gerais ou detalhadas.
 
 ![Sidebar com filtros]((( colocar link aqui )))
 
-### Indicadores de desempenho
+### 📶 Indicadores de desempenho
 
 O dashboard apresenta cards com os principais indicadores do conjunto filtrado:
 
@@ -124,7 +124,7 @@ O card de Receita Total também apresenta a comparação percentual entre o real
 
 ![Cards de indicadores do dashboard]((( colocar link aqui )))
 
-### Comparação entre realizado e meta
+### 📈 Comparação entre realizado e meta
 
 A aplicação compara o faturamento realizado com a meta correspondente aos filtros selecionados.
 
@@ -136,7 +136,7 @@ período + região + categoria + produto
 
 O resultado pode indicar desempenho acima ou abaixo da meta, com diferenciação visual no card de Receita Total.
 
-### Gráficos analíticos
+### 📊 Gráficos analíticos
 
 O dashboard utiliza gráficos interativos para facilitar a interpretação dos dados, incluindo análises como:
 
@@ -150,7 +150,7 @@ Os gráficos são organizados em cards visuais para melhorar a leitura e a separ
 
 ![Gráficos analíticos do dashboard]((( colocar link aqui )))
 
-### Relatório tabular
+### 📝 Relatório tabular
 
 A aplicação apresenta uma guia com os dados detalhados após a aplicação dos filtros.
 
@@ -158,11 +158,11 @@ A visualização tabular permite consultar os registros selecionados e verificar
 
 ![Relatório tabular]((( colocar link aqui )))
 
-### Exportação CSV
+### 🧾 Exportação CSV
 
 Os dados filtrados podem ser exportados para um arquivo CSV, permitindo análises complementares em planilhas ou outras ferramentas de dados.
 
-### Geração e download de PDF
+### 📥 Geração e download de PDF
 
 A aplicação permite gerar um relatório PDF com os dados filtrados e os principais indicadores calculados.
 
@@ -175,7 +175,7 @@ Se o usuário alterar os filtros depois de gerar o relatório, o PDF anterior é
 
 ![Relatório PDF gerado pela aplicação]((( colocar link aqui )))
 
-### Temas claro e escuro
+### 🌓 Temas claro e escuro
 
 A interface pode ser utilizada nos temas claro e escuro do Streamlit, com estilos personalizados para preservar a legibilidade dos cards, gráficos, filtros e demais componentes.
 
@@ -417,7 +417,7 @@ A proposta é demonstrar uma aplicação analítica enxuta e extensível, adequa
 
 ---
 
-## Possíveis melhorias futuras
+## 🔮 Possíveis melhorias futuras
 
 Entre as evoluções que poderiam ser implementadas estão:
 
@@ -445,9 +445,9 @@ Como solução de portfólio, o projeto reúne desenvolvimento Python, análise 
 
 ---
 
-## Autor
+# <img src="https://github.com/poliato2015-max.png" width="40" height="40" style="border-radius: 50%;" alt="Marcelo Poliato"> Autor
+Desenvolvido por **Marcelo Poliato de Oliveira** como projeto de estudo e portfólio em Python, Data Apps e Streamlit.
 
-Desenvolvido por **Marcelo Poliato** como projeto de estudo e portfólio em Python, Data Apps e Streamlit.
-
-[![GitHub](https://img.shields.io/badge/GitHub-poliato2015--max-181717?logo=github&logoColor=white)](https://github.com/poliato2015-max)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Marcelo%20Poliato-0077B5?logo=linkedin)](https://www.linkedin.com/in/marcelo-poliato)
+[![GitHub](https://img.shields.io/badge/GitHub-poliato2015--max-181717?logo=github)](https://github.com/poliato2015-max)
 
