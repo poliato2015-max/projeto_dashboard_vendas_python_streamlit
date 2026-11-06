@@ -1,19 +1,29 @@
 """Cálculo e renderização dos indicadores principais do dashboard."""
 
-import numpy as np
 import streamlit as st
 
 from formatting import formatar_moeda_br, formatar_numero_br
 
 
-def renderiza_cards_kpis(df):
+def renderiza_cards_kpis(df, meta_faturamento):
     """Calcula e renderiza os quatro cards de KPI."""
     total_faturamento = df["faturamento"].sum()
     total_qty = df["quantidade"].sum()
     avg_ticket = total_faturamento / total_qty if total_qty > 0 else 0
 
-    # Simulação visual documentada no projeto: não representa uma meta real.
-    delta_rev = np.random.uniform(-5, 15)
+    delta_rev = (
+    ((total_faturamento - meta_faturamento) / meta_faturamento) * 100
+    if meta_faturamento > 0
+    else None
+    )
+
+    if delta_rev is None:
+        indicador_meta = "Meta indisponível"
+        cor_meta = "#777777"
+    else:
+        indicador_meta = f"{delta_rev:+.1f}% vs meta"
+        cor_meta = "#4CAF50" if delta_rev >= 0 else "#FF5252"
+
     transactions = df.shape[0]
 
     c1, c2, c3, c4 = st.columns(4)
@@ -24,8 +34,8 @@ def renderiza_cards_kpis(df):
             <div class="metric-card">
                 <h3>Receita Total</h3>
                 <h2>{formatar_moeda_br(total_faturamento)}</h2>
-                <div class="delta" style="color: {'#4CAF50' if delta_rev > 0 else '#FF5252'}">
-                    {delta_rev:+.1f}% vs meta
+                <div class="delta" style="color: {cor_meta}">
+                    {indicador_meta}
                 </div>
             </div>
             """,

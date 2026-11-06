@@ -97,4 +97,11 @@ def filtros_sidebar(df):
     st.sidebar.markdown("---")
     st.sidebar.caption("Versão 1.0")
 
-    return df_filtrado
+    return (
+    df_filtrado,
+    start_date,
+    end_date,
+    selected_regioes,
+    selected_categorias,
+    selected_produtos,
+)
