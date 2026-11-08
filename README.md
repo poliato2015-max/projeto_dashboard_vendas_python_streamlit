@@ -145,7 +145,9 @@ O dashboard utiliza gráficos interativos para facilitar a interpretação dos d
 Os gráficos são organizados em cards visuais para melhorar a leitura e a separação entre os diferentes blocos analíticos.
 
 ### 📸 Screenshot
-![Gráficos](https://raw.githubusercontent.com/poliato2015-max/imagens/main/projeto_dashboard_vendas_python_streamlit/projeto_dashboard_vendas_python_streamlit_dashboad_I.png)
+![Gráficos](https://raw.githubusercontent.com/poliato2015-max/imagens/main/projeto_dashboard_vendas_python_streamlit/projeto_dashboard_vendas_python_streamlit_dashboad_3.png)
+![Gráficos](https://raw.githubusercontent.com/poliato2015-max/imagens/main/projeto_dashboard_vendas_python_streamlit/projeto_dashboard_vendas_python_streamlit_dashboad_II.png)
+
 
 ### 📝 Relatório tabular
 
