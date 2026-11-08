@@ -109,8 +109,6 @@ A barra lateral permite filtrar os dados por:
 
 Os filtros podem ser combinados para realizar análises gerais ou detalhadas.
 
-![Sidebar com filtros]((( colocar link aqui )))
-
 ### 📶 Indicadores de desempenho
 
 O dashboard apresenta cards com os principais indicadores do conjunto filtrado:
@@ -121,8 +119,6 @@ O dashboard apresenta cards com os principais indicadores do conjunto filtrado:
 - Transações.
 
 O card de Receita Total também apresenta a comparação percentual entre o realizado e a meta filtrada.
-
-![Cards de indicadores do dashboard]((( colocar link aqui )))
 
 ### 📈 Comparação entre realizado e meta
 
@@ -148,7 +144,8 @@ O dashboard utiliza gráficos interativos para facilitar a interpretação dos d
 
 Os gráficos são organizados em cards visuais para melhorar a leitura e a separação entre os diferentes blocos analíticos.
 
-![Gráficos analíticos do dashboard]((( colocar link aqui )))
+### 📸 Screenshot
+![Gráficos](https://raw.githubusercontent.com/poliato2015-max/imagens/main/projeto_dashboard_vendas_python_streamlit/projeto_dashboard_vendas_python_streamlit_dashboad_I.png)
 
 ### 📝 Relatório tabular
 
