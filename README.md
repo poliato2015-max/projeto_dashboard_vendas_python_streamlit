@@ -113,10 +113,10 @@ Os filtros podem ser combinados para realizar análises gerais ou detalhadas.
 
 O dashboard apresenta cards com os principais indicadores do conjunto filtrado:
 
-- Receita Total;
-- Vendas em quantidade;
-- Ticket Médio;
-- Transações.
+- **Receita Total:** soma do faturamento dos registros filtrados;
+- **Vendas em quantidade:** total de unidades vendidas;
+- **Valor Médio por Unidade:** faturamento total dividido pela quantidade total vendida;
+- **Registros de vendas:** quantidade de linhas retornadas após a aplicação dos filtros.
 
 O card de Receita Total também apresenta a comparação percentual entre o realizado e a meta filtrada.
 
@@ -134,13 +134,13 @@ O resultado pode indicar desempenho acima ou abaixo da meta, com diferenciação
 
 ### 📊 Gráficos analíticos
 
-O dashboard utiliza gráficos interativos para facilitar a interpretação dos dados, incluindo análises como:
+O dashboard possui cinco visualizações analíticas:
 
-- evolução da receita ao longo do tempo;
-- mix de categorias;
-- performance regional;
-- análise por dia da semana;
-- distribuição do faturamento entre produtos e categorias.
+- **Evolução da Receita Diária:** acompanha o faturamento ao longo do período selecionado;
+- **Mix de Categorias:** apresenta a participação das categorias na receita total;
+- **Performance Regional:** compara o faturamento entre as regiões;
+- **Análise por Dia da Semana:** apresenta a receita média por dia da semana;
+- **Dispersão Quantidade x Faturamento:** relaciona a quantidade vendida e o faturamento, utilizando categorias e produtos como dimensões visuais.
 
 Os gráficos são organizados em cards visuais para melhorar a leitura e a separação entre os diferentes blocos analíticos.
 
@@ -155,15 +155,33 @@ A aplicação apresenta uma guia com os dados detalhados após a aplicação dos
 
 A visualização tabular permite consultar os registros selecionados e verificar as informações utilizadas nos indicadores e gráficos.
 
+### 📸 Screenshot
 ![Relatório](https://raw.githubusercontent.com/poliato2015-max/imagens/main/projeto_dashboard_vendas_python_streamlit/projeto_dashboard_vendas_python_streamlit_relatorio_II.png)
 
 ### 🧾 Exportação CSV
 
 Os dados filtrados podem ser exportados para um arquivo CSV, permitindo análises complementares em planilhas ou outras ferramentas de dados.
 
-### 📥 Geração e download de PDF
+O arquivo CSV contém:
 
-A aplicação permite gerar um relatório PDF com os dados filtrados e os principais indicadores calculados.
+- todas as linhas do relatório após a aplicação dos filtros;
+- todas as colunas dos registros selecionados;
+- os dados completos de cada venda encontrada no período e nas dimensões comerciais escolhidas.
+
+Essa opção é indicada quando o usuário precisa trabalhar com a base detalhada, realizar novos cálculos ou utilizar os registros em outra ferramenta de análise.
+
+### 📥 Exportação de relatório executivo em PDF
+
+A aplicação permite gerar um relatório executivo em PDF com um resumo dos dados filtrados.
+
+Diferentemente do CSV, o PDF não apresenta todas as linhas do relatório. Ele foi projetado para uma visualização gerencial mais objetiva e contém:
+
+- Receita Total;
+- Quantidade total vendida;
+- Ticket Médio;
+- as 15 vendas com maior faturamento dentro do filtro selecionado.
+
+As vendas são ordenadas de forma decrescente pelo campo de faturamento. Quando o filtro selecionado possui menos de 15 registros, o relatório apresenta todos os registros disponíveis.
 
 O fluxo de exportação possui duas etapas:
 
@@ -172,6 +190,9 @@ O fluxo de exportação possui duas etapas:
 
 Se o usuário alterar os filtros depois de gerar o relatório, o PDF anterior é invalidado. O download permanece desabilitado até que um novo relatório seja gerado com os dados atualizados.
 
+Essa opção é indicada para compartilhar um resumo executivo ou apresentar rapidamente os principais resultados do período analisado.
+
+### 📸 Screenshot
 ![Exportar](https://raw.githubusercontent.com/poliato2015-max/imagens/main/projeto_dashboard_vendas_python_streamlit/projeto_dashboard_vendas_python_streamlit_exportar_pdf.png)
 
 ### 🌓 Temas claro e escuro
@@ -211,7 +232,7 @@ Novembro e dezembro não possuem vendas realizadas no cenário analisado, pois s
 A tabela `tb_metas` contém metas planejadas para todo o ano de 2026:
 
 ```text
-2026-01 a 2026-12
+01/11/2026 a 31/12/2026
 ```
 
 Dessa forma, novembro e dezembro já possuem metas preparadas, mas ainda não possuem valores realizados no banco de vendas.
