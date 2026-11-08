@@ -155,7 +155,7 @@ A aplicação apresenta uma guia com os dados detalhados após a aplicação dos
 
 A visualização tabular permite consultar os registros selecionados e verificar as informações utilizadas nos indicadores e gráficos.
 
-![Relatório tabular]((( colocar link aqui )))
+![Relatório](https://raw.githubusercontent.com/poliato2015-max/imagens/main/projeto_dashboard_vendas_python_streamlit/projeto_dashboard_vendas_python_streamlit_relatorio_II.png)
 
 ### 🧾 Exportação CSV
 
@@ -172,15 +172,11 @@ O fluxo de exportação possui duas etapas:
 
 Se o usuário alterar os filtros depois de gerar o relatório, o PDF anterior é invalidado. O download permanece desabilitado até que um novo relatório seja gerado com os dados atualizados.
 
-![Relatório PDF gerado pela aplicação]((( colocar link aqui )))
+![Exportar](https://raw.githubusercontent.com/poliato2015-max/imagens/main/projeto_dashboard_vendas_python_streamlit/projeto_dashboard_vendas_python_streamlit_exportar_pdf.png)
 
 ### 🌓 Temas claro e escuro
 
 A interface pode ser utilizada nos temas claro e escuro do Streamlit, com estilos personalizados para preservar a legibilidade dos cards, gráficos, filtros e demais componentes.
-
-![Tema claro]((( colocar link aqui )))
-
-![Tema escuro]((( colocar link aqui )))
 
 ### Layout responsivo
 
@@ -391,10 +387,6 @@ Arquivo principal: app.py
 ```
 
 O Streamlit Cloud instala as dependências listadas em `requirements.txt` e executa o arquivo `app.py` como ponto de entrada da aplicação.
-
-Aplicação publicada:
-
-**[https://dashboard-vendas-python.streamlit.app](https://dashboard-vendas-python.streamlit.app)**
 
 ---
 
