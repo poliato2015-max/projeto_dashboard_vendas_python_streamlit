@@ -292,14 +292,16 @@ O arquivo `app.py` atua como ponto de entrada e coordena a execução. A lógica
 
 ## Tecnologias utilizadas
 
-- **Python 3.12** — linguagem principal do projeto;
-- **Streamlit 1.51.0** — construção da aplicação web interativa;
-- **Pandas 2.3.3** — manipulação e análise dos DataFrames;
-- **NumPy 2.3.4** — suporte a operações numéricas;
-- **Plotly 6.4.0** — criação dos gráficos interativos;
-- **SQLite** — armazenamento dos dados de vendas e metas;
-- **FPDF2 2.8.5** — geração dos relatórios em PDF;
-- **Streamlit Community Cloud** — publicação da aplicação.
+| Tecnologia | Utilização |
+|---|---|
+| **Python 3.12** | Linguagem principal do projeto |
+| **Streamlit** | Construção da aplicação web interativa |
+| **Pandas** | Manipulação e análise dos dados |
+| **NumPy** | Operações numéricas |
+| **Plotly** | Gráficos interativos |
+| **SQLite** | Armazenamento das vendas e metas |
+| **FPDF2** | Geração do relatório executivo em PDF |
+| **Streamlit Community Cloud** | Publicação da aplicação |
 
 As versões das bibliotecas estão registradas no arquivo `requirements.txt`.
 
@@ -428,6 +430,86 @@ Este projeto possui finalidade educacional e de portfólio. Por isso, algumas ca
 - uma aplicação real poderia exigir governança, auditoria, segurança, escalabilidade e infraestrutura próprias.
 
 A proposta é demonstrar uma aplicação analítica enxuta e extensível, adequada para estudos, protótipos, MVPs e operações menores que desejem iniciar o acompanhamento de indicadores comerciais com uma solução de baixo custo.
+
+---
+
+# 🧠 Aprendizados e desafios
+
+O desenvolvimento deste projeto envolveu desafios técnicos e decisões de negócio importantes.
+
+### Modularização da aplicação
+
+A aplicação inicialmente concentrava grande parte da lógica em um único arquivo. Durante a evolução do projeto, o código foi dividido em módulos específicos para melhorar a organização, a manutenção e a reutilização.
+
+### Comparação entre realizado e meta
+
+Foi necessário estruturar uma tabela de metas detalhada por período, região, categoria e produto para garantir que a comparação acompanhasse os filtros selecionados pelo usuário.
+
+### Metas para períodos parciais
+
+Foi implementado o rateio proporcional da meta com base na quantidade de dias selecionados em cada mês.
+
+### Exportações
+
+O fluxo de exportação foi estruturado para diferenciar o CSV completo do PDF executivo resumido. Também foi implementada a invalidação do PDF quando os filtros são alterados.
+
+### Deploy
+
+Durante a publicação, foi necessário ajustar a versão do Python utilizada no Streamlit Community Cloud para garantir a instalação correta das dependências e o funcionamento da aplicação.
+
+---
+
+# 📈 Evolução do projeto
+
+O projeto foi desenvolvido de forma incremental, passando por diferentes etapas de implementação, validação e refinamento.
+
+As principais etapas da evolução foram:
+
+1. desenvolvimento da aplicação inicial em Python e Streamlit;
+2. validação dos filtros, indicadores e gráficos;
+3. implementação das exportações em CSV e PDF;
+4. aplicação da formatação monetária no padrão brasileiro;
+5. criação da tabela de metas detalhada;
+6. implementação da comparação entre realizado e meta;
+7. cálculo proporcional das metas para períodos parciais;
+8. divisão da aplicação em módulos com responsabilidades específicas;
+9. ajustes de layout, responsividade e temas claro e escuro;
+10. tratamento da invalidação do PDF após alterações nos filtros;
+11. publicação da aplicação no Streamlit Community Cloud;
+12. consolidação da documentação para apresentação em portfólio.
+
+O desenvolvimento incremental permitiu testar cada etapa antes de avançar para a seguinte, contribuindo para a estabilidade e a organização da versão atual da aplicação.
+
+---
+
+# 🧪 Validação da aplicação
+
+A aplicação foi testada em diferentes cenários para verificar o funcionamento dos principais fluxos e regras de negócio.
+
+Foram validados:
+
+- carregamento dos dados a partir do banco SQLite;
+- filtragem por período;
+- filtragem por região;
+- filtragem por categoria;
+- filtragem por produto;
+- combinação entre os filtros;
+- cálculo da Receita Total;
+- cálculo da quantidade vendida;
+- cálculo do Ticket Médio conforme a regra implementada;
+- cálculo da quantidade de registros filtrados;
+- comparação entre realizado e meta;
+- cálculo proporcional para períodos parciais;
+- comportamento dos períodos futuros de novembro e dezembro;
+- exportação de todas as linhas filtradas em CSV;
+- geração do PDF executivo;
+- apresentação de até 15 registros com maior faturamento no PDF;
+- invalidação do PDF após alteração dos filtros;
+- funcionamento dos temas claro e escuro;
+- execução local da aplicação;
+- deploy no Streamlit Community Cloud.
+
+Os testes tiveram como objetivo verificar tanto o funcionamento individual das funcionalidades quanto a integração entre filtros, indicadores, metas e exportações.
 
 ---
 
