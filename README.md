@@ -115,7 +115,7 @@ O dashboard apresenta cards com os principais indicadores do conjunto filtrado:
 
 - **Receita Total:** soma do faturamento dos registros filtrados;
 - **Vendas em quantidade:** total de unidades vendidas;
-- **Valor Médio por Unidade:** faturamento total dividido pela quantidade total vendida;
+- **Ticket Médio:** neste projeto, representa o faturamento médio por unidade vendida, calculado pela divisão da Receita Total pela quantidade total vendida;
 - **Registros de vendas:** quantidade de linhas retornadas após a aplicação dos filtros.
 
 O card de Receita Total também apresenta a comparação percentual entre o realizado e a meta filtrada.
@@ -178,8 +178,8 @@ Diferentemente do CSV, o PDF não apresenta todas as linhas do relatório. Ele f
 
 - Receita Total;
 - Quantidade total vendida;
-- Ticket Médio;
-- as 15 vendas com maior faturamento dentro do filtro selecionado.
+- Ticket Médio, calculado neste projeto como faturamento médio por unidade;
+- até 15 registros de vendas com maior faturamento dentro do filtro selecionado.
 
 As vendas são ordenadas de forma decrescente pelo campo de faturamento. Quando o filtro selecionado possui menos de 15 registros, o relatório apresenta todos os registros disponíveis.
 
@@ -203,7 +203,9 @@ A interface pode ser utilizada nos temas claro e escuro do Streamlit, com estilo
 
 A aplicação utiliza o layout amplo do Streamlit, colunas responsivas, cards e componentes compactos na barra lateral para melhorar a utilização em diferentes tamanhos de tela e níveis de zoom do navegador.
 
----
+Para utilizar o dashboard publicado no Streamlit, recomenda-se o zoom do navegador em aproximadamente 67%. Essa configuração proporciona melhor distribuição visual da barra lateral, dos cards de KPI e dos gráficos.
+
+A aplicação também permanece funcional em 100% de zoom, embora alguns elementos possam ocupar mais espaço na tela nessa configuração.
 
 ## Regra de negócio das metas
 
@@ -232,7 +234,7 @@ Novembro e dezembro não possuem vendas realizadas no cenário analisado, pois s
 A tabela `tb_metas` contém metas planejadas para todo o ano de 2026:
 
 ```text
-01/11/2026 a 31/12/2026
+01/01/2026 a 31/12/2026
 ```
 
 Dessa forma, novembro e dezembro já possuem metas preparadas, mas ainda não possuem valores realizados no banco de vendas.
